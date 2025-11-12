@@ -76,7 +76,7 @@ function App() {
       </main>
 
       <footer className="piePagina">
-        <p>Proyecto Automotora 2025 - Desarrollado con React + Vite</p>
+        <p>Proyecto Automotora 2025</p>
       </footer>
     </div>
   )

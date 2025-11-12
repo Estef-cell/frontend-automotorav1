@@ -39,7 +39,7 @@ function TarjetaAuto({ imagen, modelo, anio, transmision, combustible, kms, prec
         </div>
 
         <button className="botonVerMas">
-          Ver detayes
+          Ver detalles
         </button>
       </div>
     </div>
