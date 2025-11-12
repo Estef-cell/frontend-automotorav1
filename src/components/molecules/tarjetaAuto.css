@@ -1,0 +1,109 @@
+/* estilos para la tarjeta del auto */
+
+.tarjetaAuto {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 280px;
+  overflow: hidden;
+  background-color: white;
+  margin: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.tarjetaAuto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contenedorImagen {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.fotoAuto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* esto es para que la imagen se vea bien sin deformarse */
+}
+
+.infoAuto {
+  padding: 15px;
+}
+
+/* el precio en rojo como pide el diseño */
+.precioRojo {
+  color: #d32f2f;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.nombreModelo {
+  font-size: 18px;
+  color: #333;
+  margin: 8px 0;
+  font-weight: 600;
+  min-height: 50px;
+  /* pa que todas las tarjetas tengan la misma altura mas o menos */
+}
+
+.textoInfo {
+  font-size: 13px;
+  color: #666;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.separador {
+  color: #999;
+  margin: 0 3px;
+}
+
+.anioAuto {
+  font-weight: 500;
+  color: #555;
+}
+
+/* boton para ver mas detalles */
+.botonVerMas {
+  width: 100%;
+  padding: 10px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.2s;
+}
+
+.botonVerMas:hover {
+  background-color: #1565c0;
+}
+
+.botonVerMas:active {
+  transform: scale(0.98);
+}
+
+/* responsivo para celulares */
+@media (max-width: 600px) {
+  .tarjetaAuto {
+    width: 100%;
+    max-width: 350px;
+    margin: 10px auto;
+  }
+
+  .contenedorImagen {
+    height: 200px;
+  }
+}

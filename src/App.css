@@ -1,0 +1,73 @@
+/* estilos globales de la app */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerPrincipal {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.headerPrincipal h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* contenedor principal de las tarjetas */
+.contenedorTarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 20px;
+  gap: 20px;
+  flex: 1;
+}
+
+.piePagina {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+.piePagina p {
+  font-size: 14px;
+}
+
+/* responsivo */
+@media (max-width: 768px) {
+  .headerPrincipal h1 {
+    font-size: 28px;
+  }
+
+  .subtitulo {
+    font-size: 16px;
+  }
+
+  .contenedorTarjetas {
+    padding: 20px 10px;
+  }
+}
