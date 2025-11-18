@@ -1,109 +1,85 @@
-/* estilos para la tarjeta del auto */
+/* estilos para la tarjeta del auto - Tema Blanco y Negro */
 
 .tarjetaAuto {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  width: 280px;
-  overflow: hidden;
-  background-color: white;
-  margin: 15px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  background-color: #ffffff;
+  border: 2px solid #000000 !important;
 }
 
 .tarjetaAuto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
 }
 
 .contenedorImagen {
   width: 100%;
-  height: 180px;
+  height: 200px;
   overflow: hidden;
-  background-color: #f5f5f5;
+  background-color: #e9ecef;
+  border-bottom: 2px solid #000000;
 }
 
 .fotoAuto {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* esto es para que la imagen se vea bien sin deformarse */
+  transition: transform 0.3s ease;
 }
 
-.infoAuto {
-  padding: 15px;
+.tarjetaAuto:hover .fotoAuto {
+  transform: scale(1.05);
 }
 
-/* el precio en rojo como pide el diseño */
-.precioRojo {
-  color: #d32f2f;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+/* Precio destacado en negro */
+.precioDestacado {
+  color: #000000 !important;
+  border-bottom: 3px solid #000000;
+  display: inline-block;
+  padding-bottom: 4px;
 }
 
 .nombreModelo {
-  font-size: 18px;
-  color: #333;
-  margin: 8px 0;
-  font-weight: 600;
-  min-height: 50px;
-  /* pa que todas las tarjetas tengan la misma altura mas o menos */
+  min-height: 3rem;
+  line-height: 1.3;
 }
 
 .textoInfo {
-  font-size: 13px;
-  color: #666;
-  margin: 10px 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  align-items: center;
+  line-height: 1.6;
 }
 
 .separador {
-  color: #999;
-  margin: 0 3px;
+  color: #6c757d;
 }
 
-.anioAuto {
-  font-weight: 500;
-  color: #555;
+/* Botón con hover mejorado */
+.tarjetaAuto .btn-dark {
+  background-color: #000000;
+  border-color: #000000;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
 }
 
-/* boton para ver mas detalles */
-.botonVerMas {
-  width: 100%;
-  padding: 10px;
-  background-color: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  margin-top: 12px;
-  transition: background-color 0.2s;
+.tarjetaAuto .btn-dark:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.botonVerMas:hover {
-  background-color: #1565c0;
+.tarjetaAuto .btn-dark:active {
+  transform: translateY(0);
 }
 
-.botonVerMas:active {
-  transform: scale(0.98);
-}
-
-/* responsivo para celulares */
-@media (max-width: 600px) {
-  .tarjetaAuto {
-    width: 100%;
-    max-width: 350px;
-    margin: 10px auto;
+/* Responsivo */
+@media (max-width: 576px) {
+  .contenedorImagen {
+    height: 180px;
   }
 
-  .contenedorImagen {
-    height: 200px;
+  .nombreModelo {
+    font-size: 1.1rem;
   }
 }

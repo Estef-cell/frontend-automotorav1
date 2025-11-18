@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TarjetaAuto from './components/molecules/TarjetaAuto'
+import ModalLogin from './components/molecules/ModalLogin'
 import './App.css'
 
 function App() {
+  const [showLoginModal, setShowLoginModal] = useState(false)
   // datos de ejemplo que en el futuro vendran del backend
   // estos datos simulan lo que devolveria la api de vehiculos
   const autosEjemplo = [
@@ -54,29 +56,55 @@ function App() {
 
   return (
     <div className="App">
-      <header className="headerPrincipal">
-        <h1>Automotora - Vehiculos Disponibles</h1>
-        <p className="subtitulo">Encuentra el auto de tus sueños</p>
+      {/* Header con Bootstrap - tema blanco y negro */}
+      <header className="headerPrincipal bg-dark text-white">
+        <div className="container py-4">
+          <div className="d-flex justify-content-between align-items-center mb-3">
+            <h2 className="mb-0 fw-bold">AUTOMOTORA</h2>
+            <button
+              className="btn btn-outline-light fw-semibold"
+              onClick={() => setShowLoginModal(true)}
+            >
+              <i className="bi bi-person-circle me-2"></i>
+              Iniciar Sesión
+            </button>
+          </div>
+          <h1 className="display-4 fw-bold mb-3">Vehículos Disponibles</h1>
+          <p className="lead mb-0">Encuentra el auto de tus sueños</p>
+        </div>
       </header>
 
-      <main className="contenedorTarjetas">
-        {autosEjemplo.map((auto) => (
-          <TarjetaAuto
-            key={auto.id}
-            imagen={auto.imagen}
-            modelo={auto.modelo}
-            marca={auto.marca}
-            anio={auto.anio}
-            transmision={auto.transmision}
-            combustible={auto.combustible}
-            kms={auto.kms}
-            precio={auto.precio}
-          />
-        ))}
+      {/* Modal de Login */}
+      <ModalLogin
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+      />
+
+      {/* Main content con Bootstrap Grid */}
+      <main className="container py-5">
+        <div className="row g-4">
+          {autosEjemplo.map((auto) => (
+            <div key={auto.id} className="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <TarjetaAuto
+                imagen={auto.imagen}
+                modelo={auto.modelo}
+                marca={auto.marca}
+                anio={auto.anio}
+                transmision={auto.transmision}
+                combustible={auto.combustible}
+                kms={auto.kms}
+                precio={auto.precio}
+              />
+            </div>
+          ))}
+        </div>
       </main>
 
-      <footer className="piePagina">
-        <p>Proyecto Automotora 2025</p>
+      {/* Footer con Bootstrap */}
+      <footer className="piePagina bg-black text-white mt-auto">
+        <div className="container">
+          <p className="mb-0 py-4 text-center">Proyecto Automotora 2025</p>
+        </div>
       </footer>
     </div>
   )
